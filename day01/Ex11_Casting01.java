@@ -1,4 +1,4 @@
-public class Ex11_Casting {
+public class Ex11_Casting01 {
     public static void main(String[] args){
         short s = 10;
 
