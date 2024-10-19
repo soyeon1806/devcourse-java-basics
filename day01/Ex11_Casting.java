@@ -11,5 +11,11 @@ public class Ex11_Casting {
         double d = f;
         System.out.println(f);
         System.out.println(d);
+
+        // char -> int 형변환
+        char c = 'A';
+        int i2 = c;
+        System.out.println(c);
+        System.out.println(i2);
     }
 }
