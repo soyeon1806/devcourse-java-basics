@@ -1,4 +1,4 @@
-public class Ex05_DataType {
+public class Ex05_DataType01 {
     public static void main(String[] args){
         // 논리형 데이터 (Boolean) -> true or false
         boolean bool1;
