@@ -1,0 +1,30 @@
+# Bytecode 파일
+*.class
+
+# 패키지 폴더에 있는 모든 .class 파일
+*/target/*.class
+*/bin/*.class
+
+# IDE 관련 파일 (예: IntelliJ, Eclipse 등)
+.idea/
+*.iml
+*.log
+*.vscode/
+*.classpath
+*.project
+*.settings/
+
+# 빌드 폴더
+target/
+bin/
+out/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+# 로그 파일
+*.log
+
+# 환경 설정 파일 (예: 환경 변수 등)
+.env
