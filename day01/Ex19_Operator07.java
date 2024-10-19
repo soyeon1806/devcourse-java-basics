@@ -1,4 +1,4 @@
-public class Ex18_Operator07 {
+public class Ex19_Operator07 {
    public static void main(String[] args) {
         /*
          * 비교 연산자
