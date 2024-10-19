@@ -6,6 +6,7 @@ public class Ex13_Operator01 {
 
         // 정수 / 실수 = 실수
         System.out.println(5 / 2.0);
+        System.out.println(5 / (double)2);
 
         int i1 = 5;
         int i2 = 2;
