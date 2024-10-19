@@ -1,4 +1,4 @@
-public class Ex03_Variable {
+public class Ex03_Variable01 {
     public static void main(String[] args){
         int num;
         
