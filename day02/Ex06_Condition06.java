@@ -13,20 +13,23 @@ public class Ex06_Condition06 {
 
         int score = 77;
 
-        if (score >= 90){
-            System.out.println("A");
+        String grade = "";
+        if ( score >= 90 ) {
+            grade = "A";
         }
-        else if (score >= 80){
-            System.out.println("B");
+        else if ( score >= 80 ) {
+            grade = "B";
         }
-        else if (score >= 70){
-            System.out.println("C");
+        else if ( score >= 70 ) {
+            grade = "C";
         }
-        else if (score >= 60){
-            System.out.println("D");
+        else if ( score >= 60 ) {
+            grade = "D";
         }
-        else{
-            System.out.println("F");
+        else {
+            grade = "F";
         }
-    }
+
+        System.out.println(grade);
+        }
 }
