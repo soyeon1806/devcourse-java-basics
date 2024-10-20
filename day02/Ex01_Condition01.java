@@ -1,3 +1,4 @@
+package day02;
 public class Ex01_Condition01{
     public static void main(String[] args){
         /*
