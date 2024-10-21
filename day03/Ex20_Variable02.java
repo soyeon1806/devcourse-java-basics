@@ -1,6 +1,6 @@
 package day03;
 
-class Variable{
+class Variable02{
     String instanceVariable;     // 인스턴스 변수 -> 객체마다 고유하게 가지는 데이터
     static String classVariable; // 모든 객체가 동일한 값을 공유함
 
@@ -33,8 +33,8 @@ class Variable{
 
 public class Ex20_Variable02 {
     public static void main(String[] args) {
-        Variable v1 = new Variable();
-        Variable v2 = new Variable();
+        Variable02 v1 = new Variable02();
+        Variable02 v2 = new Variable02();
 
         v1.instanceVariable = "홍길동";
         v2.instanceVariable = "박문수";
@@ -42,6 +42,6 @@ public class Ex20_Variable02 {
         v1.doFunc1();
         v2.doFunc1();
 
-        Variable.doFunc2();
+        Variable02.doFunc2();
     }
 }

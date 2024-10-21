@@ -1,6 +1,6 @@
 package day03;
 
-class Method{
+class Method04{
     void doFunc(){
         System.out.println("doFunc() 호출");
     }
@@ -34,7 +34,7 @@ class Method{
 
 public class Ex17_Method04 {
     public static void main(String[] args) {
-        Method m = new Method();
+        Method04 m = new Method04();
         m.doFunc();
         m.doFunc(10);
         m.doFunc("10");

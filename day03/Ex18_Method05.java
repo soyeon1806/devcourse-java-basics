@@ -1,6 +1,6 @@
 package day03;
 
-class Method{
+class Method05{
 
     // 가변인자 (Varargs) : 하나의 메서드에 여러 개의 인자를 전달할 수 있도록 하는 기능
     void doFunc2(int... args){
@@ -23,7 +23,7 @@ class Method{
 
 public class Ex18_Method05 {
     public static void main(String[] args) {
-        Method m = new Method();
+        Method05 m = new Method05();
         m.doFunc2(10);
         m.doFunc2(10, 20);
         m.doFunc2(10, 20, 30, 40);
