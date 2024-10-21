@@ -1,6 +1,6 @@
 package day04;
 
-class Variable{
+class Variable01{
     String instanceVariable;     // 인스턴스 변수: 객체가 생성될 때마다 독립적으로 생성되는 변수
     static String classVariable; // 클래스 변수: 모든 인스턴스가 공유하는 변수
 
@@ -37,11 +37,11 @@ class Variable{
 public class Ex01_Variable01{
     public static void main(String[] args) {
         // 클래스 변수는 클래스명으로 직접 접근 가능
-        Variable.classVariable = "10";
-        System.out.println(Variable.classVariable);
+        Variable01.classVariable = "10";
+        System.out.println(Variable01.classVariable);
 
         // 인스턴스 변수는 객체를 통해 접근
-        Variable v = new Variable();
+        Variable01 v = new Variable01();
         v.instanceVariable = "10";
         System.out.println(v.instanceVariable);
 
