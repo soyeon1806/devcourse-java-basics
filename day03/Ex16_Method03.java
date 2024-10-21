@@ -12,7 +12,8 @@ class Person{
 
     // 메서드
     void smile(){
-        System.out.println("웃다");
+        System.out.println("웃다 " + this);      // 자기 자신 객체 (메모리 주소)
+        System.out.println("웃다 " + this.name); // 자기 자신의 이름
     }
 
     void eat() {
