@@ -1,6 +1,6 @@
 package day03;
 
-class Variable{
+class Variable01{
     // 인스턴스 멤버 필드
     String instanceVariable;
 
@@ -15,8 +15,8 @@ class Variable{
 
 public class Ex19_Variable01 {
     public static void main(String[] args) {
-        Variable v1 = new Variable();
-        Variable v2 = new Variable();
+        Variable01 v1 = new Variable01();
+        Variable01 v2 = new Variable01();
 
         v1.instanceVariable = "홍길동";
         v2.instanceVariable = "박문수";
@@ -51,6 +51,6 @@ public class Ex19_Variable01 {
         System.out.println();
 
         // 공유하는 class 변수는 혼동되지 않도록 아래와 같이 클래스 명을 사용함
-        System.out.println(Variable.classVariable);
+        System.out.println(Variable01.classVariable);
     }
 }

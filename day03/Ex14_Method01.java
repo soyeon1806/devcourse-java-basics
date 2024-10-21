@@ -1,6 +1,6 @@
 package day03;
 
-class Method{
+class Method01{
     /*
      * 메소드 선언하기
      * 메소드 명은 소문자로 시작하고, 동사를 사용해야 함
@@ -40,7 +40,7 @@ class Method{
 
 public class Ex14_Method01 {
     public static void main(String[] args) {
-        Method m = new Method();
+        Method01 m = new Method01();
 
         m.method1();
         m.method2(10);
