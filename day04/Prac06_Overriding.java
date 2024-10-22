@@ -1,9 +1,9 @@
-class Car {
+class Car06 {
     int speed;
     boolean operable;
     char grade;
     
-    Car(int speed, boolean operable, char grade) {
+    Car06(int speed, boolean operable, char grade) {
         this.speed = speed;
         this.operable = operable;
         this.grade = grade;
@@ -14,7 +14,7 @@ class Car {
     }
 }
 
-class GenesisCar06 extends Car{
+class GenesisCar06 extends Car06{
     GenesisCar06() {
         super(150, true, 'A');
     }
