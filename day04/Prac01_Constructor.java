@@ -1,4 +1,4 @@
-class Car {
+class Car01 {
     int speed;
     boolean operable;
     char grade;
@@ -10,7 +10,7 @@ class Car {
         - char타입 변수는 grade필드를 초기화
     */
     
-    public Car(int speed, boolean operable, char grade){
+    public Car01(int speed, boolean operable, char grade){
         this.speed = speed;
         this.operable = operable;
         this.grade = grade;
@@ -26,7 +26,7 @@ public class Prac01_Constructor {
             - grade필드는 char타입 'A'
         */
         
-        Car car = new Car(10, true, 'A');
+        Car01 car = new Car01(10, true, 'A');
         
         // 아래는 결과 평가를 위한 코드입니다. 수정하지 마세요.
         System.out.println(car.speed);
