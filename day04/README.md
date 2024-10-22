@@ -438,4 +438,3 @@ public class Person {
 
 ## 📑 참고
 - 온라인 자바 튜토리얼: https://www.w3schools.com/java/
-- Java SE 17 API String 문서: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
