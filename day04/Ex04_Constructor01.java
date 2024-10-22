@@ -1,5 +1,3 @@
-package day04;
-
 class Constructor01 {
 
     // 기본 생성자 (Constructor)

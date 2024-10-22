@@ -1,5 +1,3 @@
-package day04;
-
 class Variable03{
     /*
      * 인스턴스 멤버 필드는 자동으로 초기화 됨

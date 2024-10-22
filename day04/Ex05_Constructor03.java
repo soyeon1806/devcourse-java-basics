@@ -1,5 +1,3 @@
-package day04;
-
 class Constructor02{
     String name;
 

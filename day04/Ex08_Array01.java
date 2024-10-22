@@ -1,5 +1,3 @@
-package day04;
-
 class Book01{
     String title;
     String author;
