@@ -1,5 +1,3 @@
-package day04;
-
 class Variable02{
     String instanceVariable;
 

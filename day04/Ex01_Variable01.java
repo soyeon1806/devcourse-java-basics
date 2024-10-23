@@ -1,5 +1,3 @@
-package day04;
-
 class Variable01{
     String instanceVariable;     // 인스턴스 변수: 객체가 생성될 때마다 독립적으로 생성되는 변수
     static String classVariable; // 클래스 변수: 모든 인스턴스가 공유하는 변수

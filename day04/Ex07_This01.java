@@ -1,5 +1,3 @@
-package day04;
-
 class This{
     // 기본 생성자
     This(){
