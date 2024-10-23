@@ -12,14 +12,14 @@ class Person{
 public class Ex13_Object01 {
     public static void main(String[] args) {
         // 객체 변수 생성하기 (인스턴스화)
-        Person p1 = new Person();
+        Person03 p1 = new Person03();
         p1.name = "이순신";
         p1.age = 44;
         p1.jumin = "111";
         p1.height = 182.0;
         p1.weight = 85;
 
-        Person p2 = new Person();
+        Person03 p2 = new Person03();
         p2.name = "강감찬";
         p2.age = 34;
         p2.jumin = "222";
