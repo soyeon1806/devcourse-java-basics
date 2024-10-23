@@ -23,7 +23,7 @@ class LedTV03 implements TV03{
     }
 }
 
-public class Prac03_Interface {
+public class Prac03_Interface01 {
     public static void main(String[] args) {
         TV03 tv = new LedTV03();
         tv.on();

@@ -26,7 +26,7 @@ class SmartTV04 implements TV04{
 }
 
 
-public class Prac04_Interface2 {
+public class Prac04_Interface02 {
     public static void main(String[] args) {
         TV04 tv = new SmartTV04();
         tv.on();
