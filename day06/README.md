@@ -40,7 +40,12 @@
 - 모든 객체는 `Object` 클래스로부터 `toString()` 메서드를 상속받음
 
 **1) 기본 `toString()` 메서드**
-
+- `Object` 클래스의 기본 `toString()` 메서드는 객체의 런타임 클래스 이름과 해시코드를 기반으로 한 메모리 주소를 반환함
+```Java
+public String toString(){
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+```
 
 ## 📑 참고
 - 온라인 자바 튜토리얼: https://www.w3schools.com/java/
