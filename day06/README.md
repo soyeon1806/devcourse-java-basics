@@ -47,5 +47,7 @@ public String toString(){
 }
 ```
 
+**2) `toString()` 메서드 오버라이딩**
+
 ## 📑 참고
 - 온라인 자바 튜토리얼: https://www.w3schools.com/java/
