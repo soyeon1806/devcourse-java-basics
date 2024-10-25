@@ -16,7 +16,7 @@ class Person01{
 
 }
 
-public class Ex01_toStringOverridig {
+public class Ex01_toStringOverriding {
     public static void main(String[] args) {
         Person01 p = new Person01("홍길동", 30);
         System.out.println(p.toString());
