@@ -10,7 +10,7 @@ public class ZipCodeSearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        do {
+        while(true) {
             System.out.print("동이름 입력 > ");
             String address = sc.nextLine();
 
@@ -49,8 +49,9 @@ public class ZipCodeSearch {
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {if (br != null) try { br.close(); } catch (IOException e) { }}
-        } while(true);
+        };
 
         System.out.println("프로그램 끝");
+
     }
 }
