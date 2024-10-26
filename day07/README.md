@@ -126,6 +126,106 @@
   - 한 클래스가 다른 클래스의 동작을 사용하지만, 상속 보다는 구성으로써 협력할 때 적합함
   - 예를 들어, 자동차(Car)는 엔진(Engine)을 포함하여 구성하지만, 자동차와 엔진 간의 관계는 상속이 아닌 구성임<br>
     (자동차는 여러 엔진을 가질 수 있지만, 각각의 엔진은 자동차의 일부분으로 사용됨)
+
+<br><br><br>
+
+### java.lang.System 클래스
+
+**1) 입출력**
+- `System.out`
+  - 표준 출력 스트림으로, 주로 콘솔에 출력할 때 사용함
+- `System.in`
+  - 표준 입력 스트림으로, 주로 키보드 입력을 처리할 때 사용함
+- `System.err`
+  - 표준 에러 스트림으로, 콘솔에 에러 메시지를 출력할 때 사용함
+
+<br>
+
+**2) 시스템 정보 및 종료**
+- `System.currentTimeMillis()`
+  - 1970년 1월 1일 자정 이후 경과한 밀리초를 반환함
+  - 주로 성능 측정이나 시간 관련 작업을 할 때 사용됨 
+  ```java
+  public class Main{
+    public static void main(String[] args){
+        long startTime = System.currentTimeMillis(); // 현재 시작 측정
+        // ... 작업 실행 ...
+        long endTime = System.currentTimeMillis();
+        System.out.println("Execute time: " + (endTime - startTime)+ "ms");
+    }
+  }
+  ```
+- `System.exit(int status)`
+  - 프로그램을 종료함
+  - `status` 값에 따라 종료 상태를 설정할 수 있음
+    - `0` : 정상 종료
+    - `0`이 아닌 값 : 비정상 종료
+  - 프로그램이 종료될 때 JVM이 모든 리소스를 해제하고 종료됨
+  ```java
+  public class Main{
+    public static void main(String[] args){
+        System.out.println("Program will exit now.");
+        System.exit(0); //정상 종료
+        System.out.println("This line will never be printed."); // 출력되지 않음
+    }
+  }
+  ```
+
+<br>
+
+**3) 환경 변수 및 시스템 속성**
+- `System.getenv(String name)`
+  - 운영체제의 환경 변수를 반환함
+  - 예를 들면, `PATH`, `JAVA_HOME` 등의 환경 변수 값을 얻을 수 있음
+- `System.getProperty(String key)`
+  - 시스템의 속성을 반환함
+  - 예를 들면, 자바 버전, 운영체제의 종류, 파일 경로 구분자 등과 같은 시스템 정보를 얻을 수 있음
+<br>
+
+**ProcessBuilder**
+- 외부 프로세스를 실행시키거나 컨트롤할 수 있음
+
+<br><br><br>
+
+### Java.util.Date와 Calendar
+
+**1) java.util.Date 클래스**
+- 자바에서 날짜와 시간을 다루기 위한 클래스임
+- 생성 방법
+  - `Date` 객체를 생성하면 현재 시스템의 날짜와 시간을 반환함
+  - 밀리초 단위로 1970년 1월 1일 00:00:00 GMT를 기준으로 한 시간 값을 인자로 받아 특정 날짜를 생성할 수도 있음
+
+- 주의점 (`Date` 클래스는 설계의 문제점과 API의 혼란으로 인한 몇 가지의 단점이 있음)
+  - **월 값의 혼란** : `getMonth()` 메서드는 0부터 11까지의 값을 반환하여, 0월은 1월, 11월은 12월을 의미함
+  - **연도 값의 혼란** : `getYeaer()` 메서드는 1900년을 기준으로 한 연도를 반환하여, 예를들어 121을 반환했다면 이는 2021년을 의미함
+  - **`Date` 클래스는 불변하지 않음** : `Date` 객체는 변경 가능하므로, 동일한 객체를 여러 곳에서 참조할 경우 문제가 발생할 수 있음
+  - **부족한 시간대 지원** : `Date` 클래스는 시간대를 다루는 기능이 부족함
+  - **오래된 설계로 인해 많은 메서드가 Deprecated 됨**
+
+<br>
+
+**2) java.util.Calendar 클래스**
+- 특징
+  - **추상 클래스**이기 때문에 직접 객체를 생성할 수 없으며, `getInstance()` 메서드를 사용하여 하위 클래스의 인스턴스를 얻음
+  - **날짜와 시간을 필드 단위로 조작**할 수 있으며, **연도, 월, 일, 시, 분, 초** 등을 개별적으로 설정하거나 가져올 수 있음
+  - **달력 시스템을 지원**하며, GregorianCalendar (그레고리력)가 기본 구현체임
+- `Calendar`의 상수 필드
+  - `Calendar.YEAR` : 연도
+  - `Calendar.MONTH` : 월
+  - `Calendar.DOY_OF_MONTH` : 일
+  - `Calendar.HOUR` : 12시간 형식의 시간
+  - `Calendar.HOUR_OF_DAY` : 24시간 형식의 시간
+  - `Calendar.MINUTE` : 분
+  - `Calendar.SECOND` : 초
+  - `Calendar.MILLISECOND` : 밀리초
+- `Calendar`의 메서드
+  - `set(int field, int amount)` : 연도, 월, 일 등을 직접 설정할 수 있음
+  - `add(int field, int amount)` : 날짜나 시간을 더하거나 뺄 수 있음
+  - `before(Calendar when)` : 해당 날짜가 인자로 전달된 날짜보다 이전인지 확인함
+  - `after(Calendar when)` : 해당 날짜가 인자로 전달된 날짜보다 이후인지 확인함
+
+
+
 <br><br><br>
 
 ## 📑 참고
