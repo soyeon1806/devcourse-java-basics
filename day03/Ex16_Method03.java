@@ -1,6 +1,6 @@
 package day03;
 
-class Person{
+class Person03 {
     // 클래스는 멤버 필드와 메서드로 구성되어 있음
 
     // 멤버 필드
@@ -27,7 +27,7 @@ class Person{
 
 public class Ex16_Method03 {
     public static void main(String[] args) {
-        Person p1 = new Person();
+        Person03 p1 = new Person03();
         p1.name = "이순신";
         p1.age = 44;
         p1.jumin = "111";
