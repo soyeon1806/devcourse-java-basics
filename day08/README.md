@@ -2,27 +2,21 @@
 
 ## 💡 주제
 ```
-📌 자바 기초 구조
-   ➡️ 자바 프로그램의 기본 구조와 시작 방법 이해하기
-📌 입출력
-   ➡️ 콘솔에 출력하는 기본적인 방법 이해하기
-📌 변수와 자료형
-   ➡️ 다양한 변수 선언과 자료형의 사용법 이해하기
-📌 형 변환
-   ➡️ 자료형 간의 자동 및 강제 형 변환 이해하기
-📌 변수와 자료형
-   ➡️ 산술, 비교, 논리, 대입, 증감 연산자의 기본 동작 이해하기
+📌 예외 처리 (Exception Handling)
+   ➡️ 자바에서 발생 가능한 예외를 처리하는 방법 이해하기 (`try-catch`, `finally`, `throw`, `throws`)
+📌 파일과 디렉토리 관리 (File and Directory Management)
+   ➡️ `File` 클래스를 활용하여 파일과 디렉토리의 생성, 삭제, 정보 조회 및 경로 확인 방법 익히기
+📌 입출력 스트림 (Input/Output Streams)
+   ➡️ 바이트 스트림과 문자 스트림을 사용한 파일 입출력 처리 및 `Buffered` 클래스를 활용한 효율적인 데이터 처리 이해하기
 ```
 
 ## 📄 파일 설명
-| 파일명 | 내용 |
-|:--   |:--      |
-| Ex01_Start | 자바 프로그램 시작 구조 |
-| Ex02_Print | 출력 함수 예제 |
-| Ex03_Variable01 ~ Ex04_Variable02 | 변수 선언 및 사용 예제 |
-| Ex05_DataType01 ~ Ex10_DataType06 | 기본 자료형과 진법 예제 |
-| Ex11_Casting01 ~ Ex12_Casting02 | 자료형 변환 예제 |
-| Ex13_Operator01 ~ Ex19_Operator07 | 산술, 비교, 논리, 대입, 증감 연산자 예제 |
+| 파일명                                 | 내용              |
+|:------------------------------------|:----------------|
+| Ex01_String01                       | ArrayList 사용 예제 |
+| Ex02_Exception01 ~ Ex10_Exception09 | 다양한 예외 처리 방식을 다루며 if문을 활용한 예외 방지, try-catch-finally 블록을 사용한 예외 처리, 여러 catch 구문으로 특정 예외 처리, throw와 throws를 통한 예외 발생 및 전파 방법을 포함하는 예제 |
+| Ex11_File01 ~ Ex14_File04           | File 클래스를 사용해 파일과 디렉토리 생성, 존재 여부 확인, 삭제, 경로 출력, 파일 정보 조회, 디렉토리 내 파일 목록 출력 등을 수행하는 파일 및 디렉토리 관리 예제 |
+| Ex15_IO01 ~ Ex22_IO08               | FileInputStream, FileOutputStream을 통해 파일 입출력을 다루며, BufferedInputStream, BufferedOutputStream을 이용한 버퍼링 처리, FileReader, FileWriter, BufferedReader를 활용해 텍스트 파일을 문자 단위 및 줄 단위로 읽고 쓰는 예제 |
 
 ## ✏️ 정리
 
@@ -248,9 +242,85 @@ public class Example{
 | `canRead()`           | 파일이 읽기 가능한지 확인합니다.                         | `file.canRead()`  → `true`/`false`                  |
 | `canWrite()`          | 파일이 쓰기 가능한지 확인합니다.                         | `file.canWrite()`  → `true`/`false`                 |
 
+<br><br><br>
+
+### Input / Ouput 스트림
+
+**스트림(Stream)이란**
+- 스트림이란 데이터의 흐름을 의미하며, 데이터를 읽고 쓰는 과정을 추상화한 개념임
+- 자바의 입출력 시스템은 스트림을 통해 데이터를 주고 받음
+- 입력 스트림 (Input Stream)은 외부로부터 데이터를 읽어오는 스트림임
+- 출력 스트림 (Ouput Stream)은 데이터를 외부로 출력하는 스트림임
+
+![IOStream](images/stream.png)
+
+<br>
+
+**스트림의 종류**
+- 바이트 스트림 (Byte Stream)
+  - 바이트 단위 (8bit)로 데이터를 처리하는 스트림
+  - 모든 유형의 데이터를 처리할 수 있으며, 파일, 이미지, 오디오 등의 바이너리 데이터에 적합함
+  - 바이트 스트림 클래스로는 `InputStream`과 `OuputStream`이 있음
+- 문자 스트림 (Character Stream)
+  - 문자 단위 (16bit)로 데이터를 처리하는 스트림
+  - 텍스트 데이터를 읽거나 쓸 때 사용되며, 유니코드 문자를 처리하기 위해 설계됨
+  - 문자 스트림 클래스로는 `Reader`와 `Writer`가 있음
+
+![InputStream](images/input_stream.png)
+
+![OutputStream](images/output_stream.png)
+
+| 스트림 종류 | 입력 클래스 | 출력 클래스 | 데이터 유형 |
+|-- |-- |-- |-- |
+| 바이트 스트림 | `FileInputStream` | `FileOutputStream` | 바이트 데이터 (텍스트, 이미지, 비디오 등) |
+| 문자 스트림 | `FileReader` | `FileWriter` | 문자 데이터 (텍스트 파일) |
+
+<br><br><br>
+
+### 주 스트림과 보조 스트림
+
+**주 스트림 (Primary Stream)**
+- 주 스트림은 **데이터 입출력 작업을 처리**하는 스트림임
+- 파일, 네트워크, 메모리 등에서 직접 데이터를 읽고 쓰는 스트림으로, 바이트 스트림과 문자 스트림을 포함함
+- 주 스트림은 입출력의 기본 역할을 하며, 데이터를 읽거나 쓰는 핵심 작업을 수행함
+
+**보조 스트림 (Secondary Stream)**
+- 보조 스트림은 **주 스트림을 감싸거나 연결하여 추가 기능을 제공**하는 스트림임
+- 보조 스트림 자체는 데이터를 직접 입출력하지 않고, 주 스트림에 성능 향상이나 데이터 변환 등의 부가적인 기능을 제공함
+- 예를 들면, **버퍼링, 데이터 변환 (객체 직렬화), 필터링** 등의 기능을 제공함
+- 보조 스트림의 주요 역할
+  - 버퍼링
+    - 입출려 성능을 개선하는 역할
+    - `BufferedInputStream`, `BufferedReader` : 데이터를 버퍼링하여 성능을 향상시킴
+  - 데이터 변환
+    - 기본 타입이나 객체를 스트림으로 변환하거나, 반대로 스트림에서 데이터를 변환해 처리함
+    - `DataInputStream`, `DataOutputStream` : 기본 데이터 타입을 스트림에 쓰거나 읽을 수 있게 해줌
+    - `ObjectInputStream`, `ObjectOutputStream` : 객체를 직렬화해서 스트림으로 쓰거나, 역직렬화 해서 객체로 복원할 수 있게 해줌
+
+![Streams](images/streams.png)
+
+<br>
+
+**버퍼링을 통한 성능 개선**
+- 파일 입출력 작업에서 버퍼링 (Buffering)을 사용하면 성능을 크게 향상시킬 수 있음
+- 버퍼를 사용하면 데이터가 일정 크기만큼 모일 때 한 번에 처리되므로, 입출력 속도가 빨라짐
+- 버퍼링 클래스
+  - 바이트 스트림 : `BufferedInputStream`, `BufferedOutputStream`
+  - 문자 스트림 : `BufferedReader`, `BufferedWriter`
+
+![Buffering1](images/buffering1.png)
+![Buffering2](images/buffering2.png)
+
+**버퍼를 사용하는 이유**
+- 컴퓨터의 입출력 장치 (디스크, 네트워크, 키보드 등)와 프로그램 간에느 속도 차이가 큼<br>
+  -> 프로그램은 처리 속도가 빠른 반면, 입출력 장치의 속도는 상대적으로 느리기 때문에 작은 데이터를 여러 번 주고 받을 경우 성능 저하가 발생할 수 있음
+- 이때, 버퍼를 사용하면 데이터를 한 번에 모아서 처리하여 입출력 작업의 빈도를 줄이고, 전체적인 성능을 개선할 수 있음
+- 버퍼를 사용하지 않는 입출력은 우편 배달부가 편지를 하나씩 배달하는 것과 같음
+- 버퍼를 사용하는 입출력은 편지를 일정량 모아서 한 번에 배달하는 것과 같음
+
 
 <br><br><br>
 
 ## 📑 참고
-https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html
-https://docs.oracle.com/javase/specs/jls/se17/html/jls-11.html#jls-11.2
+Java SE 17 & JDK 17 Exception 관련: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html
+Java SE 17 & JDK 17 Exception 관련: https://docs.oracle.com/javase/specs/jls/se17/html/jls-11.html#jls-11.2
