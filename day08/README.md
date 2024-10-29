@@ -2,27 +2,21 @@
 
 ## 💡 주제
 ```
-📌 자바 기초 구조
-   ➡️ 자바 프로그램의 기본 구조와 시작 방법 이해하기
-📌 입출력
-   ➡️ 콘솔에 출력하는 기본적인 방법 이해하기
-📌 변수와 자료형
-   ➡️ 다양한 변수 선언과 자료형의 사용법 이해하기
-📌 형 변환
-   ➡️ 자료형 간의 자동 및 강제 형 변환 이해하기
-📌 변수와 자료형
-   ➡️ 산술, 비교, 논리, 대입, 증감 연산자의 기본 동작 이해하기
+📌 예외 처리 (Exception Handling)
+   ➡️ 자바에서 발생 가능한 예외를 처리하는 방법 이해하기 (`try-catch`, `finally`, `throw`, `throws`)
+📌 파일과 디렉토리 관리 (File and Directory Management)
+   ➡️ `File` 클래스를 활용하여 파일과 디렉토리의 생성, 삭제, 정보 조회 및 경로 확인 방법 익히기
+📌 입출력 스트림 (Input/Output Streams)
+   ➡️ 바이트 스트림과 문자 스트림을 사용한 파일 입출력 처리 및 `Buffered` 클래스를 활용한 효율적인 데이터 처리 이해하기
 ```
 
 ## 📄 파일 설명
-| 파일명 | 내용 |
-|:--   |:--      |
-| Ex01_Start | 자바 프로그램 시작 구조 |
-| Ex02_Print | 출력 함수 예제 |
-| Ex03_Variable01 ~ Ex04_Variable02 | 변수 선언 및 사용 예제 |
-| Ex05_DataType01 ~ Ex10_DataType06 | 기본 자료형과 진법 예제 |
-| Ex11_Casting01 ~ Ex12_Casting02 | 자료형 변환 예제 |
-| Ex13_Operator01 ~ Ex19_Operator07 | 산술, 비교, 논리, 대입, 증감 연산자 예제 |
+| 파일명                                 | 내용              |
+|:------------------------------------|:----------------|
+| Ex01_String01                       | ArrayList 사용 예제 |
+| Ex02_Exception01 ~ Ex10_Exception09 | 다양한 예외 처리 방식을 다루며 if문을 활용한 예외 방지, try-catch-finally 블록을 사용한 예외 처리, 여러 catch 구문으로 특정 예외 처리, throw와 throws를 통한 예외 발생 및 전파 방법을 포함하는 예제 |
+| Ex11_File01 ~ Ex14_File04           | File 클래스를 사용해 파일과 디렉토리 생성, 존재 여부 확인, 삭제, 경로 출력, 파일 정보 조회, 디렉토리 내 파일 목록 출력 등을 수행하는 파일 및 디렉토리 관리 예제 |
+| Ex15_IO01 ~ Ex22_IO08               | FileInputStream, FileOutputStream을 통해 파일 입출력을 다루며, BufferedInputStream, BufferedOutputStream을 이용한 버퍼링 처리, FileReader, FileWriter, BufferedReader를 활용해 텍스트 파일을 문자 단위 및 줄 단위로 읽고 쓰는 예제 |
 
 ## ✏️ 정리
 
@@ -328,5 +322,5 @@ public class Example{
 <br><br><br>
 
 ## 📑 참고
-https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html
-https://docs.oracle.com/javase/specs/jls/se17/html/jls-11.html#jls-11.2
+Java SE 17 & JDK 17 Exception 관련: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html
+Java SE 17 & JDK 17 Exception 관련: https://docs.oracle.com/javase/specs/jls/se17/html/jls-11.html#jls-11.2
