@@ -16,7 +16,7 @@ public class Ex06_IO06 {
 
         try{
             // ObjectOutputStream을 통해 객체를 직렬화하여 파일에 저장
-            oos = new ObjectOutputStream(new FileOutputStream("./day08/test/object.ser"));
+            oos = new ObjectOutputStream(new FileOutputStream("./day09/test/object.ser"));
 
             // 직렬화할 데이터 생성
             String[] names = {"홍길동", "박문수", "임꺽정"};
