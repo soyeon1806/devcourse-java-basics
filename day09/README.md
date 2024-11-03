@@ -114,5 +114,18 @@ cf) 역직렬화 (Deserialization)
 
 <br><br><br>
 
+### Java에서 엑셀 다루기 : JXL 라이브러리
+
+**JXL (Java Excel API) 라이브러리**
+- JXL은 자바에서 Microsoft Excel 파일을 읽고 쓸 수 있는 라이브러리임
+- JXL은 `.xls` 파일을 지원하며, 엑셀 파일에서 데이터를 읽어오거나 새로운 엑셀 파일을 생성하고 수정하는 기능을 제공함
+- 특징
+  - Excel 파일 읽기 / 쓰기 지원
+  - Excel 2003 이전 버전을 주로 지원함
+  - 다양한 데이터 타입을 처리할 수 있음
+  - 서식 지정 기능을 일부 지원함 (셀 스타일, 글꼴, 크기 등)
+
+<br><br><br>
+
 ## 📑 참고
 - 온라인 자바 튜토리얼: https://www.w3schools.com/java/
