@@ -318,6 +318,24 @@ public class Example{
 - 버퍼를 사용하지 않는 입출력은 우편 배달부가 편지를 하나씩 배달하는 것과 같음
 - 버퍼를 사용하는 입출력은 편지를 일정량 모아서 한 번에 배달하는 것과 같음
 
+<br>
+
+**직렬화 가능 클래스 (`Serializable` 인터페이스)**
+- 객체를 직렬화 하기 위해서는, 해당 클래스가 `Serializable` 인터페이스를 반드시 구현해야 함
+- `Serializable`은 마커 인터페이스로, 특정 메서드를 구현할 필요는 없지만, 자바 가상 머신이 직렬화할 수 있는 객체임을 인식하도록 함
+
+<br>
+
+**직렬화 되지 않은 필드 처리 (`transient`)**
+- 직렬화 하고 싶지 않은 필드가 있다면, 해당 필드를 `transient` 키워드로 선언하면 됨
+- `transient`로 선언된 필드는 직렬화 과정에서 제외됨
+```java
+class Person implements java.io.Serializable{
+    private String name;
+    private int age;
+    private transient String password; // 직렬화 되지 않음
+}
+```
 
 <br><br><br>
 
