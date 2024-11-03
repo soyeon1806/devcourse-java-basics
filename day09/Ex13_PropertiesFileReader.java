@@ -11,7 +11,7 @@ import java.util.Properties;
  * - key 값으로 "username", "password", "language"을 가져와 출력
  */
 
-public class Ex10_PropertiesFileReader {
+public class Ex13_PropertiesFileReader {
     public static void main(String[] args) {
         Properties properties = new Properties();
 

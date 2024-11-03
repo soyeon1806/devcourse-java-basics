@@ -10,7 +10,7 @@ import java.util.Properties;
  * - 설정 파일에 기본 사용자 정보 및 언어 설정을 저장
  */
 
-public class Ex09_PropertiesFileWriter {
+public class Ex12_PropertiesFileWriter {
     public static void main(String[] args) {
         Properties properties = new Properties();
         
